@@ -1,0 +1,18 @@
+
+h2, .test{
+  color: blue;
+}
+
+.btn-space {
+  margin: 4px 20px;
+  box-sizing: border-box;
+  width: 135px;
+}
+
+.btn-cancel.disabled{
+  cursor:not-allowed;
+}
+
+.indention {
+  margin-left: 20px;
+}

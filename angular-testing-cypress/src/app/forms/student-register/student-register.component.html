@@ -1,0 +1,90 @@
+<div class="container container-fluid">
+
+  {{registrationForm.value | json}} <br><hr>
+
+  <h2>Student Registration Form</h2>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Student Name: </label>
+      <input formControlName="studentName" class="form-control student-name" type="text" data-cy="studentName">
+    </div>
+
+    <div class="form-group">
+      <label>Student ID: </label>
+      <input formControlName="studentID" class="form-control student-id" type="text" data-test="studentID">
+    </div>
+
+    <div class="form-group">
+      <label>Gender: </label>
+      <div class="indention">
+        <input type="radio" id="male" formControlName="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" formControlName="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" formControlName="gender" value="other">
+        <label for="other">Other</label>
+      </div>
+    </div>
+
+    <div class="form-group" formGroupName="registeredUnits">
+      <label>Registered Units: </label>
+      <div class="indention">
+        <input type="checkbox" id="unit1" formControlName="unit1" value="Computer Foundamentals" checked>
+        <label for="unit1"> Computer Foundamentals</label><br>
+        <input type="checkbox" id="unit2" formControlName="unit2" value="Computer Software">
+        <label for="unit2"> Computer Software</label><br>
+        <input type="checkbox" id="unit3" formControlName="unit3" value="Computer Hardware">
+        <label for="unit3"> Computer Hardware</label><br><br>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" class="form-control" formControlName="dob">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+    </div>
+
+    <div formGroupName="studentAddress">
+      <div class="form-group">
+        <label>City</label>
+        <input formControlName="city" type="text" class="form-control address-city" data-test="addressCity">
+      </div>
+      <div class="form-group">
+        <label>State</label>
+        <input formControlName="state" type="text" class="form-control address-state">
+      </div>
+      <div class="form-group">
+        <label>Postal Code</label>
+        <input id="postcode" formControlName="postalCode" type="text" class="form-control address-postal-code">
+      </div>
+    </div>
+
+    <div class="pull-right">
+      <span class="btn btn-danger btn-space btn-cancel" (click)="cancel()" [ngClass]="cancelBtnClass()" *ngIf="isShowingCancel()" >Cancel</span>
+    </div>
+
+    <div class="form-group">
+      <label for="cars">Choose a car:</label>
+      <select id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="vw">VW</option>
+        <option value="audi" selected>Audi</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary btn-space" type="submit">Submit Form</button>
+
+  </form>
+
+</div>
+

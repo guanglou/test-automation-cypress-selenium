@@ -1,0 +1,23 @@
+
+<div class="container container-fluid">
+
+  <div>
+    <button type="button" id="btn_show_studentinfo" (click)="onClick()" class="btn btn-secondary">Show student info</button>
+  </div>
+
+  <ng-container *ngIf="student">
+    <hr>
+    <div>
+        <label>Student name: </label> <b>{{student.studentName}}</b>
+    </div>
+    <div>
+        <label>Student ID: </label> <b>{{student.studentID}}</b>
+    </div>
+    <div>
+        <label>City: </label>{{student.studentAddress.city}} <br>
+        <label>State: </label>{{student.studentAddress.state}} <br>
+        <label>Postal Code: </label> {{student.studentAddress.postalCode}}
+    </div>
+  </ng-container>
+
+</div>
